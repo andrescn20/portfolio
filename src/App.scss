@@ -1,20 +1,43 @@
+@font-face {
+  font-family: 'roboto';
+  src: local('roboto'),
+    url('./Fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+}
+
 * {
   margin: 0;
   padding: 0;
   list-style: none;
+  font-family: roboto;
 }
-div {
-  border: 2px solid black;
-}
-.navBar-linkList {
-  position: sticky;
-  top: 0;
+.about {
+  padding-left: 5vw;
+  padding-right: 5vw;
   display: flex;
-  padding-right: 55%;
-  padding-left: 5%;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  li {
-    flex-grow: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: white;
+  background-image: linear-gradient(
+    335deg,
+    hsl(198deg 95% 15%) 0%,
+    hsl(198deg 88% 11%) 62%,
+    hsl(0deg 0% 2%) 100%
+  );
+}
+
+.navBar {
+  .navBar-linkList {
+    position: sticky;
+    top: 0;
+    display: flex;
+    padding-right: 55%;
+    padding-left: 5%;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    li {
+      flex-grow: 1;
+    }
   }
 }
