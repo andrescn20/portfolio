@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
-const Contact = () => {
+const Contact: React.FC<{ updatePosition: (position: number) => void }> = ({
+  updatePosition,
+}) => {
+  const contactRef = useRef<any>(0);
+
+  useEffect(() => {
+    const contactPosition: any = contactRef.current.offsetTop;
+    updatePosition(contactPosition);
+  }, []);
   return (
-    <div className='contact' id='contact'>
+    <div className='contact' id='contact' ref={contactRef}>
       <h2> Contact Me</h2>
       <form>
         <input type='text' placeholder='Name'></input>

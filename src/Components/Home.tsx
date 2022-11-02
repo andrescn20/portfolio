@@ -14,13 +14,13 @@ const Home = () => {
           <button className='home-aboutBtn'>Get to Know Me Better</button>
         </p>
         <div className='home-navigationContainer'>
-          <HashLink smooth to='/#projects' className='home-navLink'>
+          <HashLink smooth to='/portfolio/#projects' className='home-navLink'>
             Projects
           </HashLink>
-          <HashLink smooth to='/#skills' className='home-navLink'>
+          <HashLink smooth to='/portfolio/#skills' className='home-navLink'>
             Skills
           </HashLink>
-          <HashLink smooth to='/#contact' className='home-navLink'>
+          <HashLink smooth to='/portfolio/#contact' className='home-navLink'>
             Contact
           </HashLink>
         </div>

@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
-const Projects = () => {
+const Projects: React.FC<{ updatePosition: (position: number) => void }> = ({
+  updatePosition,
+}) => {
+  const projectsRef = useRef<any>(0);
+
+  useEffect(() => {
+    const projectsPosition: any = projectsRef.current.offsetTop;
+    updatePosition(projectsPosition);
+  }, []);
+
   return (
-    <div className='projects' id='projects'>
+    <div className='projects' id='projects' ref={projectsRef}>
       <div className='layeredSpacer curvedLayer1'></div>
 
       <div className='projects-content'>
@@ -24,6 +33,7 @@ const Projects = () => {
           <p>App for tracking and designing workout cycles</p>
         </div>
       </div>
+
       <div className='layeredSpacer curvedLayer2'></div>
     </div>
   );
