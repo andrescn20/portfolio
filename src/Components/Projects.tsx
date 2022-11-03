@@ -3,12 +3,12 @@ import React, { useEffect, useRef } from 'react';
 const Projects: React.FC<{ updatePosition: (position: number) => void }> = ({
   updatePosition,
 }) => {
-  const projectsRef = useRef<any>(0);
+  const projectsRef = useRef<any>(null);
 
   useEffect(() => {
     const projectsPosition: any = projectsRef.current.offsetTop;
-    updatePosition(projectsPosition);
-  }, []);
+    updatePosition(projectsPosition - 70);
+  }, [updatePosition]);
 
   return (
     <div className='projects' id='projects' ref={projectsRef}>

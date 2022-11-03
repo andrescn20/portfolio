@@ -21,35 +21,52 @@ const NavBar: React.FC<Props> = ({
   const [navBarClass, setNavBarClass] = useState('noBorder');
 
   useEffect(() => {
-    if (scrollPosition + 70 < skills) {
+    if (scrollPosition < skills) {
       setIshomeActive(true);
       setIsSkillsActive(false);
       setIsProjectsActive(false);
       setIsContactActive(false);
       setNavBarClass('noBorder');
     }
-    if (scrollPosition + 70 > skills && scrollPosition + 70 < projects) {
+    if (scrollPosition > skills && scrollPosition < projects) {
       setIshomeActive(false);
       setIsSkillsActive(true);
       setIsProjectsActive(false);
       setIsContactActive(false);
       setNavBarClass('border');
     }
-    if (scrollPosition + 70 > projects && scrollPosition + 70 < contact) {
+    if (scrollPosition > projects && scrollPosition < contact) {
       setIshomeActive(false);
       setIsSkillsActive(false);
       setIsProjectsActive(true);
       setIsContactActive(false);
       setNavBarClass('border');
     }
-    if (scrollPosition + 70 > contact) {
+    if (scrollPosition > contact) {
       setIshomeActive(false);
       setIsSkillsActive(false);
       setIsProjectsActive(false);
       setIsContactActive(true);
       setNavBarClass('border');
     }
-  }, [scrollPosition]);
+    console.log(navBarClass);
+    // console.log({
+    //   home: isHomeActive,
+    //   skills: isSkillsActive,
+    //   projects: isProjectsActive,
+    //   contact: isContactActive,
+    // });
+  }, [
+    contact,
+    isContactActive,
+    isHomeActive,
+    isProjectsActive,
+    isSkillsActive,
+    navBarClass,
+    projects,
+    scrollPosition,
+    skills,
+  ]);
   const gotoTop = () => {
     window.scrollTo({
       top: 0,

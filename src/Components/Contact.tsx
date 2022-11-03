@@ -3,12 +3,13 @@ import React, { useEffect, useRef } from 'react';
 const Contact: React.FC<{ updatePosition: (position: number) => void }> = ({
   updatePosition,
 }) => {
-  const contactRef = useRef<any>(0);
+  const contactRef = useRef<any>(null);
 
   useEffect(() => {
     const contactPosition: any = contactRef.current.offsetTop;
-    updatePosition(contactPosition);
-  }, []);
+    updatePosition(contactPosition - 70);
+  }, [updatePosition]);
+
   return (
     <div className='contact' id='contact' ref={contactRef}>
       <h2> Contact Me</h2>
