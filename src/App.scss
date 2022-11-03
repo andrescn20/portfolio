@@ -1,11 +1,17 @@
 @font-face {
   font-family: 'roboto';
   src: local('roboto'),
-    url('./Fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+    url('./Fonts/Roboto/Roboto-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Noto';
+  src: local('Noto'),
+    url('./Fonts/Noto_Sans_Mono/NotoSansMono-VariableFont_wdth\,wght.ttf')
+      format('truetype');
 }
 
 $nav-height: 2rem;
-$nav-padding: 0.5rem;
+$nav-padding: 0rem;
 $section-padding: calc($nav-height + 2 * $nav-padding + 1rem);
 
 //Color Pallete 1
@@ -15,7 +21,7 @@ $whiteBlue: #dff6ff;
 
 //Color Pallete 2
 $darkGray: #2c3333;
-$grayBlue: #395b64;
+$grayBlue: #263f46;
 $lightGrayBlue: #a5c9ca;
 //Contrast Colors:
 
@@ -25,19 +31,18 @@ $orange: #e14d2a;
   margin: 0;
   padding: 0;
   list-style: none;
-  font-family: roboto;
+  font-family: Noto;
   // font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
   //   Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .navBar {
   background-color: $darkGray;
-
+  font-size: 1rem;
   position: fixed;
   top: 0;
   z-index: 2;
   width: 100vw;
-
   padding-top: $nav-padding;
   padding-bottom: $nav-padding;
   &.noBorder {
@@ -48,7 +53,7 @@ $orange: #e14d2a;
   }
   .navBar-linkList {
     display: flex;
-    padding-right: 40%;
+    padding-right: 15%;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     color: $whiteBlue;
@@ -57,18 +62,30 @@ $orange: #e14d2a;
     }
     .regularNavLink,
     .activeNavLink {
+      transition: transform 0.2s;
       text-align: center;
       flex-grow: 1;
       text-decoration: none;
       &:hover {
-        transform: scale(1.2);
+        transform: scale(1.1);
       }
     }
-    .activeNavLink {
+    .activeNavLink,
+    .activeNavLink:hover {
       color: $orange;
+      transform: translateY(9px) scale(1.1);
+      text-decoration: underline $orange 3px;
     }
   }
 }
+
+@media (min-width: 800px) {
+  .navBar-linkList {
+    padding-right: 40%;
+    font-size: 1.5rem;
+  }
+}
+
 .home {
   position: sticky;
   top: 0;
@@ -83,14 +100,16 @@ $orange: #e14d2a;
   background-color: $darkGray;
   color: $whiteBlue;
   h2 {
-    font-size: 4rem;
+    font-size: 3.5rem;
+    margin: 0 4vw 0;
   }
   h3 {
-    font-size: 3rem;
-    color: $darkTurqoise;
+    font-size: 2.8rem;
+    margin: 0 4vw 0;
+    color: $orange;
   }
   p {
-    margin-right: 20%;
+    margin: 0 4vw 0;
   }
   .home-aboutBtn {
     display: block;
@@ -105,13 +124,13 @@ $orange: #e14d2a;
     flex-grow: 1;
     text-decoration: none;
     text-align: center;
-    color: $whiteBlue;
-    border: 2px solid $darkTurqoise;
+    color: $orange;
+    border: 2px solid $whiteBlue;
     margin: 20px;
     padding: 0.5em;
     border-radius: 20px;
     &:visited {
-      color: $whiteBlue;
+      color: $orange;
     }
     &:hover {
       transform: scale(1.2);
@@ -127,39 +146,130 @@ $orange: #e14d2a;
     margin: 0.5em 1em;
     padding: 0.25em 1em;
   }
+  a {
+    margin: 0px 2rem 0px 4rem;
+    img {
+      height: 2.2rem;
+    }
+  }
 }
+
+$skillListHeight: 50vh;
 
 .skills {
   position: relative;
-  height: 50vh;
-  // border-top: 4px solid $orange;
-
+  top: 2px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding-top: $section-padding;
+  justify-content: space-between;
+  padding-top: calc(1.2 * $section-padding);
   background-color: $whiteBlue;
   z-index: 1;
-  color: $darkGray;
+  min-height: 40vh;
+  color: $darkBlue;
+  .skillsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    .skillsTitle {
+      width: 90%;
+      text-align: start;
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+    }
+    .skillsList {
+      align-items: center;
+      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(3, 5rem);
+      grid-template-rows: repeat(2, 100px);
+      column-gap: 5vw;
+      row-gap: 50px;
+
+      li {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        height: 5rem;
+        align-items: center;
+        transform: rotateZ(20deg);
+        background-color: $darkGray;
+        border-radius: 20px;
+
+        svg {
+          height: 3rem;
+          transform: rotateZ(-20deg);
+        }
+      }
+    }
+  }
+  .aboutContainer {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .aboutTitle {
+      text-align: center;
+      margin-bottom: 2rem;
+      margin-top: 2rem;
+      width: 90%;
+      text-align: start;
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  .skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .skillsContainer {
+      margin-left: 10vw;
+      margin-right: 10vw;
+    }
+  }
 }
 
 .projects {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding-top: 10vw;
-  padding-bottom: 10vw;
+  display: grid;
+  padding: 15vw 5vw;
   color: $whiteBlue;
-  background-color: $darkGray;
-  // min-height: 50vh;
-  height: 100vh;
-  .projects-content {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
+  background-color: $grayBlue;
+  min-height: 50vh;
+  .individualProject {
+    margin-bottom: 4vh;
+    display: grid;
+    &.left {
+      grid-template-areas:
+        'name image'
+        'description image'
+        'tech links';
+    }
+    &.right {
+      grid-template-areas:
+        ' image name'
+        ' image description '
+        ' links tech ';
+    }
+    .title {
+      grid-area: name;
+    }
+    .description {
+      grid-area: description;
+    }
+    .techStack {
+      grid-area: tech;
+    }
+    .image {
+      grid-area: image;
+    }
+    .links {
+      grid-area: links;
+    }
   }
   .layeredSpacer {
     aspect-ratio: 960/540;
@@ -178,10 +288,13 @@ $orange: #e14d2a;
     bottom: 0;
   }
 }
+@media (min-width: 800px) {
+}
 
 .contact {
   position: relative;
-  padding-top: $section-padding;
+  top: -2px;
+  padding-top: 10vh;
   height: 50vh;
   background-color: $whiteBlue;
   height: 100vh;
