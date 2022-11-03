@@ -1,5 +1,7 @@
 import React from 'react';
 import { HashLink } from 'react-router-hash-link';
+import gitHub from '../Images/github.png';
+import linkedIn from '../Images/linkedin.png';
 
 const Home = () => {
   return (
@@ -13,6 +15,14 @@ const Home = () => {
           I am.
           <button className='home-aboutBtn'>Get to Know Me Better</button>
         </p>
+        <div>
+          <a href='https://github.com/andrescn20'>
+            <img alt='gitHub' src={gitHub} />
+          </a>
+          <a href='https://www.linkedin.com/in/andres-castro-197856181/'>
+            <img alt='LinkedIn' src={linkedIn} />
+          </a>
+        </div>
         <div className='home-navigationContainer'>
           <HashLink smooth to='/portfolio/#projects' className='home-navLink'>
             Projects

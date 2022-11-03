@@ -49,13 +49,6 @@ const NavBar: React.FC<Props> = ({
       setIsContactActive(true);
       setNavBarClass('border');
     }
-    console.log(navBarClass);
-    // console.log({
-    //   home: isHomeActive,
-    //   skills: isSkillsActive,
-    //   projects: isProjectsActive,
-    //   contact: isContactActive,
-    // });
   }, [
     contact,
     isContactActive,
