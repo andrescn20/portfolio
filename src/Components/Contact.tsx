@@ -15,7 +15,6 @@ const Contact: React.FC<{ updatePosition: (position: number) => void }> = ({
 
   const sendEmail = (e: any) => {
     e.preventDefault();
-
     emailjs
       .sendForm(
         'service_8kltq91',
