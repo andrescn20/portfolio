@@ -47,13 +47,14 @@ $orange: #e14d2a;
   padding-bottom: $nav-padding;
   &.noBorder {
     border: none;
+    border-bottom: 2px solid $orange;
   }
   &.border {
-    border-bottom: 3px solid $orange;
+    border-bottom: 2px solid $orange;
   }
   .navBar-linkList {
     display: flex;
-    padding-right: 15%;
+    justify-content: center;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     color: $whiteBlue;
@@ -62,27 +63,39 @@ $orange: #e14d2a;
     }
     .regularNavLink,
     .activeNavLink {
-      transition: transform 0.2s;
+      transition: transform 0.25s;
       text-align: center;
-      flex-grow: 1;
+      // flex-grow: 1;
+      width: 25%;
       text-decoration: none;
       &:hover {
-        transform: scale(1.1);
+        color: $orange;
       }
     }
     .activeNavLink,
     .activeNavLink:hover {
+      background-color: $orange;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      // transform: translateY(0.5em);
+      // color: $whiteBlue;
+      // &.nav-homeTab {
       color: $orange;
-      transform: translateY(9px) scale(1.1);
-      text-decoration: underline $orange 3px;
+      background-color: transparent;
+      border: 2px solid $orange;
+      border-bottom: 3px solid $darkGray;
+      transform: translateY(calc(0.5em + 1px));
+      // }
     }
   }
 }
 
 @media (min-width: 800px) {
-  .navBar-linkList {
-    padding-right: 40%;
-    font-size: 1.5rem;
+  .navBar {
+    .navBar-linkList {
+      font-size: 1.2rem;
+      padding-right: 30%;
+    }
   }
 }
 
@@ -164,10 +177,10 @@ $skillListHeight: 50vh;
   align-items: center;
   justify-content: space-between;
   padding-top: calc(1.2 * $section-padding);
-  background-color: $whiteBlue;
+  background-color: $darkGray;
   z-index: 1;
   min-height: 40vh;
-  color: $darkBlue;
+  color: $whiteBlue;
   .skillsContainer {
     display: flex;
     flex-direction: column;
@@ -196,6 +209,7 @@ $skillListHeight: 50vh;
         align-items: center;
         transform: rotateZ(20deg);
         background-color: $darkGray;
+        border: 2px solid $orange;
         border-radius: 20px;
 
         svg {
@@ -238,7 +252,7 @@ $skillListHeight: 50vh;
   display: grid;
   padding: 15vw 5vw;
   color: $whiteBlue;
-  background-color: $grayBlue;
+  background-color: $darkGray;
   min-height: 50vh;
   .individualProject {
     margin-bottom: 4vh;
@@ -271,22 +285,22 @@ $skillListHeight: 50vh;
       grid-area: links;
     }
   }
-  .layeredSpacer {
-    aspect-ratio: 960/540;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    position: absolute;
-  }
-  .curvedLayer1 {
-    background-image: url(./Images/layer1.svg);
-    top: 0;
-  }
-  .curvedLayer2 {
-    background-image: url(./Images/layer2.svg);
-    bottom: 0;
-  }
+  // .layeredSpacer {
+  //   aspect-ratio: 960/540;
+  //   width: 100%;
+  //   background-repeat: no-repeat;
+  //   background-position: center;
+  //   background-size: cover;
+  //   position: absolute;
+  // }
+  // .curvedLayer1 {
+  //   background-image: url(./Images/layer1.svg);
+  //   top: 0;
+  // }
+  // .curvedLayer2 {
+  //   background-image: url(./Images/layer2.svg);
+  //   bottom: 0;
+  // }
 }
 @media (min-width: 800px) {
 }
@@ -296,6 +310,7 @@ $skillListHeight: 50vh;
   top: -2px;
   padding-top: 10vh;
   height: 50vh;
-  background-color: $whiteBlue;
+  background-color: $darkGray;
   height: 100vh;
+  color: $whiteBlue;
 }

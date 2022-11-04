@@ -73,7 +73,9 @@ const NavBar: React.FC<Props> = ({
         <HashLink
           smooth
           to='/portfolio/#home'
-          className={`${isHomeActive ? 'activeNavLink' : 'regularNavLink'}`}
+          className={`${
+            isHomeActive ? 'activeNavLink' : 'regularNavLink'
+          } nav-homeTab`}
           onClick={gotoTop}
         >
           Home
