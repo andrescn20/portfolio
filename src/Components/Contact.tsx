@@ -1,14 +1,20 @@
 import React, { useEffect, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
-const Contact: React.FC<{ updatePosition: (position: number) => void }> = ({
-  updatePosition,
-}) => {
+interface Props {
+  contactStart: (position: number) => void;
+  updatePosition: (position: number) => void;
+}
+
+const Contact: React.FC<Props> = ({ updatePosition, contactStart }) => {
   const contactRef = useRef<any>(null);
 
   useEffect(() => {
+    contactStart(contactRef.current.offsetTop);
+  }, []);
+  useEffect(() => {
     const contactPosition: any = contactRef.current.offsetTop;
-    updatePosition(contactPosition - 70);
+    updatePosition(contactPosition);
   }, [updatePosition]);
 
   const form = useRef<any>('');

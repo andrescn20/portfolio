@@ -13,7 +13,7 @@ const Home = () => {
           Having a strong background in Mechanical Engineering and Education,
           building to solve problems and communicating solutions is part of who
           I am.
-          <button className='home-aboutBtn'>Get to Know Me Better</button>
+          {/* <button className='home-aboutBtn'>Get to Know Me Better</button> */}
         </p>
         <div>
           <a href='https://github.com/andrescn20'>

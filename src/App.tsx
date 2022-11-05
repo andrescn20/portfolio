@@ -13,6 +13,10 @@ const App: React.FC = () => {
   const [projectsPosition, setProjectsPosition] = useState(0);
   const [contactPosition, setContactPosition] = useState(0);
 
+  const [skillsStartingPosition, setSkillsStartingPosition] = useState(0);
+  const [projectsStartingPosition, setProjectsStartingPosition] = useState(0);
+  const [contactStartingPosition, setContactStartingPosition] = useState(0);
+
   const scrollPosition = useScrollPosition();
 
   const updateSkillsPosition = (position: number) => {
@@ -38,11 +42,24 @@ const App: React.FC = () => {
                 projects={projectsPosition}
                 contact={contactPosition}
                 scrollPosition={scrollPosition}
+                skillsStart={skillsStartingPosition}
+                projectsStart={projectsStartingPosition}
+                contactStart={contactStartingPosition}
               />
               <Home />
-              <Skills updatePosition={updateSkillsPosition} />
-              <Projects updatePosition={updateProjectsPosition} />
-              <Contact updatePosition={updateContactPosition} />
+              <Skills
+                updatePosition={updateSkillsPosition}
+                skillsStart={setSkillsStartingPosition}
+              />
+              <Projects
+                updatePosition={updateProjectsPosition}
+                projectsStart={setProjectsStartingPosition}
+              />
+              <Contact
+                updatePosition={updateContactPosition}
+                contactStart={setContactStartingPosition}
+              />
+              <div className='emptyMyticalSpace'>Im a mytical empty space</div>
             </div>
           }
         />
