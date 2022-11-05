@@ -1,11 +1,13 @@
-import { type } from 'os';
 import React from 'react';
+import Zoom from 'react-medium-image-zoom';
+import 'react-medium-image-zoom/dist/styles.css';
+import gitHubLogo from '../Images/github.png';
 
 interface Props {
   name: string;
   description: string;
   techStack: Array<{ name?: any; link?: any }>;
-  links: Array<string>;
+  links: { gitHub: string; live: string };
   image?: any;
   video?: { src: string; type: string };
   id: number;
@@ -22,7 +24,9 @@ export const Project: React.FC<Props> = ({
 }) => {
   const displayStack = () => {
     return techStack.map((tech) => {
-      return <img className='tech' src={tech.link} alt={tech.name} />;
+      return (
+        <img className='tech' src={tech.link} alt={tech.name} key={tech.name} />
+      );
     });
   };
   const direction = () => {
@@ -34,7 +38,11 @@ export const Project: React.FC<Props> = ({
   };
   const media = () => {
     if (image) {
-      return <img className='image' src={image} alt={`${name} Media`} />;
+      return (
+        <Zoom>
+          <img className='image' src={image} alt={`${name} Media`} />
+        </Zoom>
+      );
     }
     if (video) {
       return (
@@ -52,7 +60,14 @@ export const Project: React.FC<Props> = ({
       <p className='description'>{description}</p>
       <div className='techStack'>{displayStack()}</div>
       <div className='media'>{media()}</div>
-      <ul className='links'>{links}</ul>
+      <div className='links'>
+        <a href={links.gitHub}>
+          <img className='gitHubLogo' alt='gitHub' src={gitHubLogo} />
+        </a>
+        <a className='liveBtn' href={links.live}>
+          Live
+        </a>
+      </div>
     </div>
   );
 };
