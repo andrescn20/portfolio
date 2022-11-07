@@ -59,7 +59,6 @@ const App: React.FC = () => {
                 updatePosition={updateContactPosition}
                 contactStart={setContactStartingPosition}
               />
-              <div className='emptyMyticalSpace'>Im a mytical empty space</div>
             </div>
           }
         />

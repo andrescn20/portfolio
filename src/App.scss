@@ -25,6 +25,7 @@ $orange: #e14d2a;
 
 $scroll-padding: 70px;
 
+$font: 'roboto';
 * {
   margin: 0;
   padding: 0;
@@ -68,6 +69,7 @@ h3 {
     }
     :hover {
       cursor: pointer;
+      transform: scale(1.1);
     }
     .regularNavLink,
     .activeNavLink {
@@ -124,6 +126,16 @@ h3 {
   h2 {
     font-size: 3.5rem;
     margin: 0 4vw 0;
+    .name-letter {
+      &:hover {
+        color: black;
+        transform: scale(1.1);
+        cursor: crosshair;
+      }
+      &.dead {
+        color: red;
+      }
+    }
   }
   h3 {
     font-size: 2.8rem;
@@ -176,12 +188,20 @@ h3 {
   }
 }
 
+@media (max-width: 375px) {
+  .home {
+    padding-top: 15vh;
+  }
+}
+
 $skillListHeight: 50vh;
 
 .skills {
   position: relative;
   top: 0px;
   z-index: 1;
+  padding-left: 15vw;
+  padding-right: 15vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -247,7 +267,6 @@ $skillListHeight: 50vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
     .skillsContainer {
-      margin-left: 10vw;
       margin-right: 10vw;
     }
   }
@@ -268,20 +287,26 @@ $skillListHeight: 50vh;
     margin-bottom: 4vh;
     display: grid;
     column-gap: 20px;
-    &.left {
-      grid-template-areas:
-        'name media'
-        'description media'
-        'tech links';
-      grid-template-columns: 2fr 3fr;
-    }
-    &.right {
-      grid-template-areas:
-        ' media name'
-        ' media description '
-        ' links tech ';
-      grid-template-columns: 3fr 2fr;
-    }
+    grid-template-areas:
+      'name'
+      'media'
+      'description'
+      'tech'
+      'links';
+    // &.left {
+    //   grid-template-areas:
+    //     'name media'
+    //     'description media'
+    //     'tech links';
+    //   grid-template-columns: 2fr 3fr;
+    // }
+    // &.right {
+    //   grid-template-areas:
+    //     ' media name'
+    //     ' media description '
+    //     ' links tech ';
+    //   grid-template-columns: 3fr 2fr;
+    // }
     .title {
       grid-area: name;
     }
@@ -344,20 +369,104 @@ $skillListHeight: 50vh;
   //   bottom: 0;
   // }
 }
-@media (max-width: 800px) {
+@media (min-width: 800px) {
+  .projects {
+    .individualProject {
+      &.left {
+        grid-template-areas:
+          'name media'
+          'description media'
+          'tech links';
+        grid-template-columns: 2fr 3fr;
+      }
+      &.right {
+        grid-template-areas:
+          ' media name'
+          ' media description '
+          ' links tech ';
+        grid-template-columns: 3fr 2fr;
+      }
+      .title {
+        grid-area: name;
+      }
+      .description {
+        grid-area: description;
+      }
+      .techStack {
+        grid-area: tech;
+      }
+      .media {
+        grid-area: media;
+      }
+      .links {
+        grid-area: links;
+      }
+    }
+  }
 }
 
 .contact {
   position: relative;
   top: 0;
+  height: 100vh;
   z-index: 3;
+  display: grid;
+  padding-left: 15vw;
+  padding-right: 15vw;
+  grid-template-columns: 1fr;
+  grid-template-areas: 'title' 'information' 'form';
+  column-gap: 20px;
   background-color: $darkGray;
   color: $whiteBlue;
   padding-top: $scroll-padding;
+
+  h2 {
+    grid-area: title;
+    text-align: center;
+  }
+  .contact-form {
+    grid-area: form;
+    display: flex;
+    flex-direction: column;
+    div {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1rem;
+    }
+    .form-message {
+      .messageBox {
+        height: 20vh;
+      }
+    }
+  }
+  .confirmationMessage {
+    position: relative;
+    border-radius: 20px;
+    width: 150px;
+    height: fit-content;
+    top: -30vh;
+    background-color: rgba(35, 207, 35, 0.89);
+    left: calc(50% - 75px - 2px - 0.5rem);
+    padding: 0.5rem;
+    color: rgb(2, 59, 2);
+    border: 4px solid rgb(2, 59, 2);
+    &.hidden {
+      visibility: hidden;
+    }
+    p {
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+  .coolStuff {
+    grid-area: information;
+  }
 }
-.emptyMyticalSpace {
-  height: 200vh;
-  background-color: $darkGray;
-  position: relative;
-  z-index: 4;
+
+@media (min-width: 800px) {
+  .contact {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 5rem 1fr;
+    grid-template-areas: 'title title' 'form information';
+  }
 }

@@ -1,13 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { HashLink } from 'react-router-hash-link';
 import gitHub from '../Images/github.png';
 import linkedIn from '../Images/linkedin.png';
 
 const Home = () => {
+  // const [dead, setDead] = useState('alive');
+
+  const name = () => {
+    const name = 'Andres Castro';
+    return name.split('').map((letter, index) => {
+      return (
+        <span className='name-letter ' key={index}>
+          {letter}
+        </span>
+      );
+    });
+  };
+
+  // <span className={`name-letter ${dead}`} key={index} onClick={dieLetter}>
+  //   {letter}
+  // </span>;
+
+  // const dieLetter = () => {
+  //   setDead('dead');
+  // };
+
   return (
     <div className='home' id='home'>
       <div className='about-text'>
-        <h2>Andrés Castro</h2>
+        <h2>{name()}</h2>
         <h3>Front-End Web Developer</h3>
         <p>
           Having a strong background in Mechanical Engineering and Education,
