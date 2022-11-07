@@ -115,7 +115,17 @@ const Skills: React.FC<Props> = ({ updatePosition, skillsStart }) => {
       </div>
       <div className='aboutContainer'>
         <h2 className='aboutTitle'>About</h2>
-        <p className='aboutText'>About me bla bla bla bla</p>
+        <p className='aboutText'>
+          {' '}
+          Since I was a young boy, I've been fascinated with the ability of
+          creation we all posses. Being able to understand how our surroundings
+          work and manipulating the world with that knowledge seemed like magic.
+          Forward to the present and I've now placed all that passion into Front
+          End Development. Theres a balance I simply enjoy too much: the freedom
+          of creativity restrained by the power of code. Ideas and imagination
+          might be the foundation of creation, but the struggle of bring them to
+          life is what makes me thrive.{' '}
+        </p>
       </div>
     </div>
   );
