@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.6fddaf3a.css",
-    "main.js": "/portfolio/static/js/main.01c8c081.js",
+    "main.css": "/portfolio/static/css/main.434c7ec4.css",
+    "main.js": "/portfolio/static/js/main.09008103.js",
+    "static/media/CalionCrafting.gif": "/portfolio/static/media/CalionCrafting.eda85eb6b5b1137b47bc.gif",
     "static/media/NotoSansMono-VariableFont_wdth,wght.ttf": "/portfolio/static/media/NotoSansMono-VariableFont_wdth,wght.a8ade8267e695169df7d.ttf",
-    "static/media/CalionCrafting(Cart).png": "/portfolio/static/media/CalionCrafting(Cart).fd4da8964e27ef847b72.png",
     "static/media/Roboto-Medium.ttf": "/portfolio/static/media/Roboto-Medium.7c8d04cd831df3033c8a.ttf",
     "index.html": "/portfolio/index.html",
-    "main.6fddaf3a.css.map": "/portfolio/static/css/main.6fddaf3a.css.map",
-    "main.01c8c081.js.map": "/portfolio/static/js/main.01c8c081.js.map"
+    "main.434c7ec4.css.map": "/portfolio/static/css/main.434c7ec4.css.map",
+    "main.09008103.js.map": "/portfolio/static/js/main.09008103.js.map"
   },
   "entrypoints": [
-    "static/css/main.6fddaf3a.css",
-    "static/js/main.01c8c081.js"
+    "static/css/main.434c7ec4.css",
+    "static/js/main.09008103.js"
   ]
 }
