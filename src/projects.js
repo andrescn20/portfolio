@@ -51,17 +51,21 @@ export const projects = [
       'Weather app designed for all those poor MMORPG NPCs suffering from the cruel reality of their world. Now, at least, they know if weather will be on their side... for once. ',
     techStack: [
       {
-        name: 'React',
-        link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+        name: 'JS',
+        link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
       },
       {
-        name: 'Sass',
-        link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg',
+        name: 'CSS',
+        link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
+      },
+      {
+        name: 'HTML',
+        link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
       },
     ],
     links: { gitHub: '', live: '' },
     image: require('./Videos/NPCWeather.gif'),
-    id: 3,
+    id: 2,
   },
   // {
   //   name: 'BodyBuilding in depth Planning App',

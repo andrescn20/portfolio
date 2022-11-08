@@ -25,7 +25,12 @@ export const Project: React.FC<Props> = ({
   const displayStack = () => {
     return techStack.map((tech) => {
       return (
-        <img className='tech' src={tech.link} alt={tech.name} key={tech.name} />
+        <img
+          className={`tech ${tech.name}`}
+          src={tech.link}
+          alt={tech.name}
+          key={tech.name}
+        />
       );
     });
   };

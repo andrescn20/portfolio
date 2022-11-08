@@ -290,12 +290,14 @@ $skillListHeight: 50vh;
     margin-bottom: 4vh;
     display: grid;
     column-gap: 20px;
+    row-gap: 20px;
     grid-template-areas:
       'name'
       'media'
       'description'
       'tech'
       'links';
+    // border: 2px solid $orange;
     // &.left {
     //   grid-template-areas:
     //     'name media'
@@ -312,6 +314,12 @@ $skillListHeight: 50vh;
     // }
     .title {
       grid-area: name;
+      border: 2px solid $orange;
+      // border-radius: 20px;
+      text-align: center;
+      padding: 0rem 0;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
     }
     .description {
       grid-area: description;
@@ -319,9 +327,13 @@ $skillListHeight: 50vh;
     .techStack {
       grid-area: tech;
       display: flex;
+      justify-content: space-evenly;
       .tech {
-        height: 2rem;
-        flex-grow: 1;
+        height: 2.5rem;
+        // flex-grow: 1;
+      }
+      .Sass {
+        height: 3rem;
       }
     }
     .media {
@@ -333,7 +345,7 @@ $skillListHeight: 50vh;
     .links {
       grid-area: links;
       display: flex;
-      justify-content: space-around;
+      justify-content: space-evenly;
       align-items: center;
       height: 2.5rem;
 
@@ -378,14 +390,14 @@ $skillListHeight: 50vh;
     .individualProject {
       &.left {
         grid-template-areas:
-          'name media'
+          'empty name'
           'description media'
           'tech links';
         grid-template-columns: 2fr 3fr;
       }
       &.right {
         grid-template-areas:
-          ' media name'
+          ' name empty'
           ' media description '
           ' links tech ';
         grid-template-columns: 3fr 2fr;
