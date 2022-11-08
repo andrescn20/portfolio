@@ -20,7 +20,7 @@ export const projects = [
       },
     ],
     links: { gitHub: '', live: '' },
-    image: require('./Videos/CalionCrafting.gif'),
+    image: require('./Videos/CalionCrafting2.gif'),
     id: 1,
   },
   // {
