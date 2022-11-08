@@ -60,13 +60,13 @@ export const projects = [
       },
     ],
     links: { gitHub: '', live: '' },
-    image: 'image',
+    image: require('./Videos/NPCWeather.gif'),
     id: 3,
   },
   {
     name: 'BodyBuilding in depth Planning App',
     description:
-      'Creating a rock solid routine requires more than targeting different muscles throught the week. Its crucial to take into consideration the total volume for each body part and keep everything whithin the optimal ranges. Thats ',
+      "Creating a rock solid routine requires more than targeting different muscles throught the week. Its crucial to take into consideration the total volume for each body part and keep everything whithin the optimal ranges. Thats were 'App Name' comes in. ",
     techStack: [
       {
         name: 'React',
