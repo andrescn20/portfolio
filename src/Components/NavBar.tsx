@@ -140,7 +140,7 @@ const NavBar: React.FC<Props> = ({
           onClick={gotoProjects}
           className={` ${
             isProjectsActive ? 'activeNavLink' : 'regularNavLink'
-          }`}
+          } projectsNav`}
         >
           Projects
         </div>

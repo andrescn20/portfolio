@@ -10,7 +10,7 @@ const Home = () => {
     const name = 'Andres Castro';
     return name.split('').map((letter, index) => {
       return (
-        <span className='name-letter ' key={index}>
+        <span className={`name-letter  ${'letter-' + index}`} key={index}>
           {letter}
         </span>
       );
@@ -31,12 +31,12 @@ const Home = () => {
         <h2>{name()}</h2>
         <h3>Front-End Web Developer</h3>
         <p>
-          I a strong background in Mechanical Engineering and Education,
-          building to solve problems and communicating solutions is part of who
-          I am.
+          I have a strong background in Mechanical Engineering and Education.
+          Building to solve problems and communicating solutions are key skills
+          in my life.
           {/* <button className='home-aboutBtn'>Get to Know Me Better</button> */}
         </p>
-        <div>
+        <div className='socials'>
           <a href='https://github.com/andrescn20'>
             <img alt='gitHub' src={gitHub} />
           </a>

@@ -5,9 +5,16 @@ import { projects } from '../projects';
 interface Props {
   projectsStart: (position: number) => void;
   updatePosition: (position: number) => void;
+  scrollPosition: number;
+  pojectStartPosition: number;
 }
 
-const Projects: React.FC<Props> = ({ updatePosition, projectsStart }) => {
+const Projects: React.FC<Props> = ({
+  updatePosition,
+  projectsStart,
+  scrollPosition,
+  pojectStartPosition,
+}) => {
   const projectsRef = useRef<any>(null);
 
   useEffect(() => {
@@ -21,7 +28,14 @@ const Projects: React.FC<Props> = ({ updatePosition, projectsStart }) => {
 
   const displayProjects = () => {
     return projects.map((project) => {
-      return <Project {...project} key={project.name} />;
+      return (
+        <Project
+          {...project}
+          key={project.name}
+          scrollPosition={scrollPosition}
+          projectsPosition={pojectStartPosition}
+        />
+      );
     });
   };
   return (

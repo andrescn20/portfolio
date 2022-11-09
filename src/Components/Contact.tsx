@@ -56,11 +56,9 @@ const Contact: React.FC<Props> = ({ updatePosition, contactStart }) => {
       <h2> Contact Me</h2>
       <form className='contact-form' ref={form} onSubmit={sendEmail}>
         <div className='form-name'>
-          <label>Name</label>
           <input type='text' name='user_name' placeholder='Andres Castro' />
         </div>
         <div className='form-email'>
-          <label>Email</label>
           <input
             type='email'
             name='user_email'
@@ -68,19 +66,28 @@ const Contact: React.FC<Props> = ({ updatePosition, contactStart }) => {
           />
         </div>
         <div className='form-message'>
-          <label>Message</label>
           <textarea className='messageBox' name='message' />
         </div>
-        <div className='form-submitBtn'>
-          <input type='submit' value='Send' />
+        <div>
+          <input className='form-submitBtn' type='submit' value='Send' />
         </div>
       </form>
       <div className={`confirmationMessage ${confirmationMessageStatus}`}>
         <p> Message sent.</p>
       </div>
-      <div className='coolStuff'>
-        {' '}
-        Here goes some interestinng sool stuff. A call to action, maybe.{' '}
+      <div className='contact-info'>
+        <h2 className='contact-infoTitle'>Why I Code</h2>
+        <p className='contact-infoContent'>
+          {' '}
+          Since I was a young boy, I've been fascinated with the ability of
+          creation we all posses. Being able to understand how our surroundings
+          work and manipulating the world with that knowledge seemed like magic.
+          Forward to the present and I've now placed all that passion into Front
+          End Development. I found a balance I simply enjoy too much: the
+          freedom of creativity restrained by the power of code. Ideas and
+          imagination might be the foundation of creation, but the struggle of
+          bring them to life is what makes me thrive.{' '}
+        </p>
       </div>
     </div>
   );

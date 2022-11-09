@@ -1,10 +1,18 @@
 import React, { useEffect, useRef } from 'react';
+import scroll from '../Images/scroll.gif';
 
 interface Props {
   skillsStart: (position: number) => void;
   updatePosition: (position: number) => void;
+  scrollPosition: number;
+  skillsPosition: number;
 }
-const Skills: React.FC<Props> = ({ updatePosition, skillsStart }) => {
+const Skills: React.FC<Props> = ({
+  updatePosition,
+  skillsStart,
+  scrollPosition,
+  skillsPosition,
+}) => {
   const skillsRef = useRef<any>(null);
 
   useEffect(() => {
@@ -16,12 +24,16 @@ const Skills: React.FC<Props> = ({ updatePosition, skillsStart }) => {
     updatePosition(skillsPosition);
   }, [updatePosition]);
 
+  const skillsAppear = skillsPosition - 100;
+
   return (
     <div id='skills' className='skills' ref={skillsRef}>
       <div className='skillsContainer'>
         <h2 className='skillsTitle'>Skills</h2>
         <ul className='skillsList'>
-          <li>
+          <li
+            className={scrollPosition >= skillsAppear ? 'appear' : 'disappear'}
+          >
             <svg viewBox='0 0 128 128'>
               <g fill='#61DAFB'>
                 <circle cx='64' cy='64' r='11.4'></circle>
@@ -30,7 +42,9 @@ const Skills: React.FC<Props> = ({ updatePosition, skillsStart }) => {
             </svg>
           </li>
 
-          <li>
+          <li
+            className={scrollPosition >= skillsAppear ? 'appear' : 'disappear'}
+          >
             <svg viewBox='0 0 128 128'>
               <path fill='#fff' d='M22.67 47h99.67v73.67H22.67z'></path>
               <path
@@ -40,7 +54,9 @@ const Skills: React.FC<Props> = ({ updatePosition, skillsStart }) => {
               ></path>
             </svg>
           </li>
-          <li>
+          <li
+            className={scrollPosition >= skillsAppear ? 'appear' : 'disappear'}
+          >
             <svg viewBox='0 0 128 128'>
               <path
                 fillRule='evenodd'
@@ -50,7 +66,9 @@ const Skills: React.FC<Props> = ({ updatePosition, skillsStart }) => {
               ></path>
             </svg>
           </li>
-          <li>
+          <li
+            className={scrollPosition >= skillsAppear ? 'appear' : 'disappear'}
+          >
             <svg viewBox='0 0 128 128'>
               <path
                 fill='#F0DB4F'
@@ -62,7 +80,9 @@ const Skills: React.FC<Props> = ({ updatePosition, skillsStart }) => {
               ></path>
             </svg>
           </li>
-          <li>
+          <li
+            className={scrollPosition >= skillsAppear ? 'appear' : 'disappear'}
+          >
             <svg viewBox='0 0 128 128'>
               <path
                 fill='#E44D26'
@@ -83,7 +103,9 @@ const Skills: React.FC<Props> = ({ updatePosition, skillsStart }) => {
             </svg>
           </li>
 
-          <li>
+          <li
+            className={scrollPosition >= skillsAppear ? 'appear' : 'disappear'}
+          >
             <svg viewBox='0 0 128 128'>
               <path
                 fill='#1572B6'
@@ -112,19 +134,20 @@ const Skills: React.FC<Props> = ({ updatePosition, skillsStart }) => {
             </svg>
           </li>
         </ul>
+        <img
+          src={scroll}
+          alt='Scroll Down'
+          className={scrollPosition >= skillsAppear ? 'disappear' : 'appear'}
+        />
       </div>
       <div className='aboutContainer'>
         <h2 className='aboutTitle'>About</h2>
         <p className='aboutText'>
           {' '}
-          Since I was a young boy, I've been fascinated with the ability of
-          creation we all posses. Being able to understand how our surroundings
-          work and manipulating the world with that knowledge seemed like magic.
-          Forward to the present and I've now placed all that passion into Front
-          End Development. Theres a balance I simply enjoy too much: the freedom
-          of creativity restrained by the power of code. Ideas and imagination
-          might be the foundation of creation, but the struggle of bring them to
-          life is what makes me thrive.{' '}
+          In my journey as a Front-End Dev, I've learned to pay special
+          attention to detail. I'm always looking forward to create beautiful
+          interfaces, without ever sacrificing functionality and striving for a
+          satisfying user experience no matter the device.{' '}
         </p>
       </div>
     </div>

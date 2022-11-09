@@ -50,10 +50,14 @@ const App: React.FC = () => {
               <Skills
                 updatePosition={updateSkillsPosition}
                 skillsStart={setSkillsStartingPosition}
+                skillsPosition={skillsPosition}
+                scrollPosition={scrollPosition}
               />
               <Projects
                 updatePosition={updateProjectsPosition}
                 projectsStart={setProjectsStartingPosition}
+                scrollPosition={scrollPosition}
+                pojectStartPosition={projectsPosition}
               />
               <Contact
                 updatePosition={updateContactPosition}

@@ -35,7 +35,7 @@ $font: 'roboto';
   //   Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 h2 {
-  text-align: start;
+  text-align: center;
   font-size: 2.2rem;
   margin-bottom: 2rem;
 }
@@ -92,7 +92,10 @@ h3 {
       border: 2px solid $orange;
       border-bottom: 5px solid $darkGray;
       transform: translateY(0.7em);
-      // }
+      &.projectsNav {
+        background-color: $whiteBlue;
+        border-bottom: 5px solid $whiteBlue;
+      }
     }
   }
 }
@@ -109,6 +112,39 @@ h3 {
     }
   }
 }
+
+@keyframes enterLetter {
+  from {
+    transform: translateY(10px);
+    font-size: 4.5rem;
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    font-size: 3.5rem;
+  }
+}
+
+@keyframes enterLeft {
+  from {
+    transform: translateX(-100vw);
+  }
+  to {
+    transform: traslateX(0);
+  }
+}
+
+@keyframes enterRight {
+  from {
+    transform: translateX(100vw);
+  }
+  to {
+    transform: traslateX(0);
+  }
+}
+
+$duration: 0.1s;
+$startDelay: 0.5s;
 
 .home {
   position: relative;
@@ -127,14 +163,60 @@ h3 {
   h2 {
     font-size: 3.5rem;
     margin: 0 4vw 0;
+    text-align: start;
+    // animation-name: enterLetter;
+    // animation-delay calc($startDelay + $duration*)
+    // animation-timing-function: ease-in;
     .name-letter {
+      animation-name: enterLetter;
+      animation-duration: 0.4s;
+      animation-timing-function: linear;
+      animation-fill-mode: backwards;
       &:hover {
-        color: black;
-        transform: scale(1.1);
-        cursor: crosshair;
+        color: $orange;
       }
-      &.dead {
-        color: red;
+      &.letter-0 {
+        animation-delay: calc($startDelay + $duration * 0);
+      }
+      &.letter-1 {
+        animation-delay: calc($startDelay + $duration * 1);
+      }
+      &.letter-2 {
+        animation-delay: calc($startDelay + $duration * 2);
+      }
+      &.letter-3 {
+        animation-delay: calc($startDelay + $duration * 3);
+      }
+      &.letter-4 {
+        animation-delay: calc($startDelay + $duration * 4);
+      }
+      &.letter-5 {
+        animation-delay: calc($startDelay + $duration * 5);
+      }
+      &.letter-6 {
+        animation-delay: calc($startDelay + $duration * 6);
+        // animation-duration: 0;
+      }
+      &.letter-7 {
+        animation-delay: calc($startDelay + $duration * 7);
+      }
+      &.letter-8 {
+        animation-delay: calc($startDelay + $duration * 8);
+      }
+      &.letter-9 {
+        animation-delay: calc($startDelay + $duration * 9);
+      }
+      &.letter-10 {
+        animation-delay: calc($startDelay + $duration * 10);
+      }
+      &.letter-11 {
+        animation-delay: calc($startDelay + $duration * 11);
+      }
+      &.letter-12 {
+        animation-delay: calc($startDelay + $duration * 12);
+      }
+      &.letter-13 {
+        animation-delay: calc($startDelay + $duration * 13);
       }
     }
   }
@@ -142,18 +224,40 @@ h3 {
     font-size: 2.8rem;
     margin: 0 4vw 0;
     color: $orange;
+    animation-name: enterRight;
+    animation-duration: 1.2s;
+    animation-delay: 1.5s;
+    animation-fill-mode: backwards;
+    animation-timing-function: ease-out;
   }
   p {
     margin: 0 4vw 0;
+    animation-name: enterRight;
+    animation-duration: 1.2s;
+    animation-delay: 2s;
+    animation-fill-mode: backwards;
+    animation-timing-function: ease-out;
   }
   .home-aboutBtn {
     display: block;
     border: none;
   }
+  .socials {
+    animation-name: enterRight;
+    animation-duration: 1.2s;
+    animation-delay: 2s;
+    animation-fill-mode: backwards;
+    animation-timing-function: ease-out;
+  }
   .home-navigationContainer {
     display: flex;
     justify-content: center;
     z-index: 2;
+    animation-name: enterRight;
+    animation-duration: 1.2s;
+    animation-delay: 2.6s;
+    animation-fill-mode: backwards;
+    animation-timing-function: ease-out;
   }
   .home-navLink {
     flex-grow: 1;
@@ -197,6 +301,50 @@ h3 {
 
 $skillListHeight: 50vh;
 
+@keyframes rotateIn {
+  from {
+    transform: rotateZ(90deg);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) rotateZ(20deg);
+    opacity: 1;
+  }
+}
+@keyframes rotateOut {
+  from {
+    transform: scale(1) rotateZ(20deg);
+    opacity: 1;
+  }
+  to {
+    transform: rotateZ(90deg);
+    opacity: 0;
+  }
+}
+@keyframes appearScroll {
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes disappearScroll {
+  from {
+    // transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 .skills {
   position: relative;
   top: 0px;
@@ -211,6 +359,7 @@ $skillListHeight: 50vh;
   min-height: 40vh;
   color: $whiteBlue;
   padding-top: $scroll-padding;
+  padding-bottom: 5rem;
   .skillsContainer {
     display: flex;
     flex-direction: column;
@@ -225,8 +374,9 @@ $skillListHeight: 50vh;
       display: grid;
       grid-template-columns: repeat(3, 5rem);
       grid-template-rows: repeat(2, 100px);
-      column-gap: 3vw;
+      column-gap: 5vw;
       row-gap: 50px;
+      margin-bottom: 2rem;
 
       li {
         display: flex;
@@ -238,11 +388,42 @@ $skillListHeight: 50vh;
         background-color: $darkGray;
         border: 2px solid $orange;
         border-radius: 20px;
-
+        &.appear {
+          animation-name: rotateIn;
+          animation-fill-mode: backwards;
+          animation-delay: 0.2s;
+          animation-duration: 2s;
+          opacity: 1;
+        }
+        &.disappear {
+          opacity: 0;
+          animation-fill-mode: backwards;
+          animation-name: rotateOut;
+          animation-delay: 0.2s;
+          animation-duration: 2s;
+        }
         svg {
           height: 3rem;
           transform: rotateZ(-20deg);
         }
+      }
+    }
+    img {
+      position: absolute;
+      height: 5rem;
+      &.appear {
+        animation-name: appearScroll;
+        animation-fill-mode: backwards;
+        animation-delay: 0.5s;
+        animation-duration: 2s;
+        opacity: 1;
+      }
+      &.disappear {
+        opacity: 0;
+        animation-fill-mode: backwards;
+        animation-name: disappearScroll;
+        animation-delay: 0.2s;
+        animation-duration: 1s;
       }
     }
   }
@@ -250,17 +431,16 @@ $skillListHeight: 50vh;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    height: 100%;
+    justify-content: flex-start;
     .aboutTitle {
-      text-align: center;
-      margin-bottom: 2rem;
-      margin-top: 2rem;
+      margin-bottom: 1rem;
       width: 90%;
-      text-align: start;
       font-size: 2.2rem;
     }
     .aboutText {
       text-align: justify;
+      font-size: 1.2rem;
     }
   }
 }
@@ -280,13 +460,15 @@ $skillListHeight: 50vh;
   bottom: 0;
   z-index: 2;
   display: grid;
-  padding-left: 10vw;
-  padding-right: 10vw;
-  color: $whiteBlue;
-  background-color: $darkGray;
+  color: $darkGray;
+  background-color: $whiteBlue;
   padding-top: $scroll-padding;
-
+  // .projects-title {
+  //   margin-left: 12vw;
+  // }
   .individualProject {
+    padding: 2rem 0;
+    margin: 0rem 10vw;
     margin-bottom: 4vh;
     display: grid;
     column-gap: 20px;
@@ -297,29 +479,18 @@ $skillListHeight: 50vh;
       'description'
       'tech'
       'links';
-    // border: 2px solid $orange;
-    // &.left {
-    //   grid-template-areas:
-    //     'name media'
-    //     'description media'
-    //     'tech links';
-    //   grid-template-columns: 2fr 3fr;
-    // }
-    // &.right {
-    //   grid-template-areas:
-    //     ' media name'
-    //     ' media description '
-    //     ' links tech ';
-    //   grid-template-columns: 3fr 2fr;
-    // }
+    background-color: #2c3333;
+    color: $whiteBlue;
+    padding: 1rem;
+    border-radius: 20px;
+
     .title {
       grid-area: name;
       border: 2px solid $orange;
-      // border-radius: 20px;
       text-align: center;
-      padding: 0rem 0;
-      border-top-left-radius: 20px;
-      border-top-right-radius: 20px;
+      padding: 5px 0;
+      border-radius: 20px;
+      height: fit-content;
     }
     .description {
       grid-area: description;
@@ -328,6 +499,7 @@ $skillListHeight: 50vh;
       grid-area: tech;
       display: flex;
       justify-content: space-evenly;
+
       .tech {
         height: 2.5rem;
         // flex-grow: 1;
@@ -390,17 +562,23 @@ $skillListHeight: 50vh;
     .individualProject {
       &.left {
         grid-template-areas:
-          'empty name'
+          'name media'
           'description media'
           'tech links';
         grid-template-columns: 2fr 3fr;
+        // .title {
+        //   margin-right: 60%;
+        // }
       }
       &.right {
         grid-template-areas:
-          ' name empty'
+          ' media name'
           ' media description '
           ' links tech ';
         grid-template-columns: 3fr 2fr;
+        // .title {
+        //   margin-left: 60%;
+        // }
       }
       .title {
         grid-area: name;
@@ -424,14 +602,15 @@ $skillListHeight: 50vh;
 .contact {
   position: relative;
   top: 0;
-  height: 100vh;
+  min-height: 100vh;
   z-index: 3;
   display: grid;
-  padding-left: 15vw;
-  padding-right: 15vw;
+  padding-left: 10vw;
+  padding-right: 10vw;
   grid-template-columns: 1fr;
-  grid-template-areas: 'title' 'information' 'form';
-  column-gap: 20px;
+  grid-template-rows: 5rem;
+  grid-template-areas: 'title' 'form' 'information';
+  // column-gap: 20px;
   background-color: $darkGray;
   color: $whiteBlue;
   padding-top: $scroll-padding;
@@ -439,15 +618,40 @@ $skillListHeight: 50vh;
   h2 {
     grid-area: title;
     text-align: center;
+    height: fit-content;
   }
   .contact-form {
     grid-area: form;
     display: flex;
     flex-direction: column;
+    border-radius: 20px;
+    margin-bottom: 2rem;
     div {
       display: flex;
       flex-direction: column;
-      margin-bottom: 1rem;
+      margin-bottom: 5px;
+      align-items: center;
+    }
+
+    input,
+    textarea {
+      background-color: $darkBlue;
+      color: $whiteBlue;
+      border: none;
+      border: 2px solid $whiteBlue;
+      border-radius: 12px;
+      padding-left: 1rem;
+      height: 2rem;
+      font-family: Noto;
+      width: 60vw;
+      &:active {
+        text-decoration: none;
+      }
+    }
+    .form-submitBtn {
+      width: 32vw;
+      padding: 0;
+      text-align: center;
     }
     .form-message {
       .messageBox {
@@ -475,16 +679,24 @@ $skillListHeight: 50vh;
       font-weight: bold;
     }
   }
-  .coolStuff {
+  .contact-info {
     grid-area: information;
+    background-color: $darkBlue;
+    padding: 1rem;
+    text-align: justify;
+    border-radius: 20px;
   }
 }
 
 @media (min-width: 800px) {
   .contact {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 5rem 1fr;
-    grid-template-areas: 'title title' 'form information';
+    // grid-template-columns: 1fr;
+    // grid-template-rows: 5rem 1fr;
+    grid-template-areas: 'title' 'form' 'information';
+    .contact-form {
+      padding-left: 5vw;
+      padding-right: 5vw;
+    }
     .confirmationMessage {
       top: -50vh;
     }

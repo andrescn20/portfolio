@@ -12,6 +12,8 @@ interface Props {
   video?: { src: string; type: string };
   id: number;
   key: string;
+  projectsPosition: number;
+  scrollPosition: number;
 }
 export const Project: React.FC<Props> = ({
   name,
@@ -21,6 +23,8 @@ export const Project: React.FC<Props> = ({
   image,
   video,
   id,
+  projectsPosition,
+  scrollPosition,
 }) => {
   const displayStack = () => {
     return techStack.map((tech) => {
@@ -61,7 +65,13 @@ export const Project: React.FC<Props> = ({
 
   return (
     <div className={`individualProject ${direction()}`}>
-      <h3 className='title'>{name}</h3>
+      <h3
+        className={`title
+         ${scrollPosition >= projectsPosition ? 'appear' : 'disappear'}
+          `}
+      >
+        {name}
+      </h3>
       <p className='description'>{description}</p>
       <div className='techStack'>{displayStack()}</div>
       <div className='media'>{media()}</div>
