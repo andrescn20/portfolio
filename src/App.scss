@@ -875,6 +875,7 @@ $skillListHeight: 50vh;
     width: calc(100% - 2rem - 20vw);
     height: fit-content;
     opacity: (0);
+    z-index: 1;
     &.appear {
       opacity: (1);
       visibility: visible;
@@ -961,26 +962,26 @@ $skillListHeight: 50vh;
     }
   }
   #confirmationMessage {
-    width: 20%;
+    width: 40%;
+    margin: auto;
+    z-index: 2;
+    max-width: 250px;
+    min-width: 120px;
   }
   .confirmationMessage {
-    position: absolute;
-    top: 35vh;
+    position: relative;
+    top: -25vh;
     border-radius: 20px;
-    background-color: $dark;
+    background-color: $lightPrimary;
     padding: 0.5rem;
-    color: $contrast;
-    border: 4px solid $contrast;
-    margin: auto;
+    color: $dark;
+    border: 4px solid $lightSecondary;
     &.hidden {
       visibility: hidden;
     }
     p {
       text-align: center;
       font-weight: bold;
-    }
-    .hidden {
-      width: 20%;
     }
   }
   .contact-info {
@@ -1047,22 +1048,3 @@ $skillListHeight: 50vh;
     }
   }
 }
-
-// @media (min-width: 1260px) {
-//   .contact {
-//     .contact-form {
-//       // width: calc(100% - 2rem - 60vw);
-//       max-width: 400px;
-//       margin: auto;
-//     }
-//   }
-// }
-
-// @media (min-width: 2000px) {
-//   .contact {
-//     .contact-form {
-//       max-width: 400px;
-//       margin: auto;
-//     }
-//   }
-// }

@@ -90,14 +90,14 @@ const Contact: React.FC<Props> = ({
           <div id='submitDiv'>
             <input className='form-submitBtn' type='submit' value='Send' />
           </div>
+        </form>
+        <div className='contact-info'>
           <div
             id='confirmationMessage'
             className={`confirmationMessage ${confirmationMessageStatus}`}
           >
             <p> Message sent.</p>
           </div>
-        </form>
-        <div className='contact-info'>
           <h2 className='contact-infoTitle'>Why I Code</h2>
           <p className='contact-infoContent'>
             {' '}
