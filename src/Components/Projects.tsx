@@ -44,7 +44,7 @@ const Projects: React.FC<Props> = ({
       <h2 className='projects-title'>Projects</h2>
       <div>{displayProjects()}</div>
 
-      {/* <div className='layeredSpacer curvedLayer2'></div> */}
+      {/* <div className='bottomSvg'></div> */}
     </div>
   );
 };

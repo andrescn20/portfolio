@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import scroll from '../Images/scroll.gif';
+import top from '../Images/skills-top.svg';
 
 interface Props {
   skillsStart: (position: number) => void;
@@ -24,12 +25,13 @@ const Skills: React.FC<Props> = ({
     updatePosition(skillsPosition);
   }, [updatePosition]);
 
-  const skillsAppear = skillsPosition - 100;
+  const skillsAppear = skillsPosition - 500;
 
   return (
     <div id='skills' className='skills' ref={skillsRef}>
+      <img className='transition-skills-top' src={top} alt='' />
       <div className='skillsContainer'>
-        <h2 className='skillsTitle'>Skills</h2>
+        <h2 className='skillsTitle'>Core Skills</h2>
         <ul className='skillsList'>
           <li
             className={scrollPosition >= skillsAppear ? 'appear' : 'disappear'}
@@ -140,7 +142,7 @@ const Skills: React.FC<Props> = ({
           className={scrollPosition >= skillsAppear ? 'disappear' : 'appear'}
         />
       </div>
-      <div className='aboutContainer'>
+      {/* <div className='aboutContainer'>
         <h2 className='aboutTitle'>About</h2>
         <p className='aboutText'>
           {' '}
@@ -149,7 +151,7 @@ const Skills: React.FC<Props> = ({
           interfaces, without ever sacrificing functionality and striving for a
           satisfying user experience no matter the device.{' '}
         </p>
-      </div>
+      </div> */}
     </div>
   );
 };
