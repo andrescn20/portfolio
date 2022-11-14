@@ -29,7 +29,7 @@ const NavBar: React.FC<Props> = ({
   const correctedScrollPosition = scrollPosition - x;
 
   useEffect(() => {
-    if (correctedScrollPosition <= skills) {
+    if (correctedScrollPosition <= projects) {
       setIshomeActive(true);
       setIsSkillsActive(false);
       setIsProjectsActive(false);
@@ -37,22 +37,22 @@ const NavBar: React.FC<Props> = ({
       setNavBarClass('noBorder');
     }
     if (
-      correctedScrollPosition >= skills &&
-      correctedScrollPosition < projects
+      correctedScrollPosition >= projects &&
+      correctedScrollPosition < skills
     ) {
       setIshomeActive(false);
-      setIsSkillsActive(true);
-      setIsProjectsActive(false);
+      setIsProjectsActive(true);
+      setIsSkillsActive(false);
       setIsContactActive(false);
       setNavBarClass('border');
     }
     if (
-      correctedScrollPosition >= projects &&
+      correctedScrollPosition >= skills &&
       correctedScrollPosition < contact
     ) {
       setIshomeActive(false);
-      setIsSkillsActive(false);
-      setIsProjectsActive(true);
+      setIsProjectsActive(false);
+      setIsSkillsActive(true);
       setIsContactActive(false);
       setNavBarClass('border');
     }
@@ -129,12 +129,6 @@ const NavBar: React.FC<Props> = ({
         >
           Home
         </div>
-        <div
-          onClick={gotoSkills}
-          className={` ${isSkillsActive ? 'activeNavLink' : 'regularNavLink'}`}
-        >
-          Skills
-        </div>
 
         <div
           onClick={gotoProjects}
@@ -143,6 +137,12 @@ const NavBar: React.FC<Props> = ({
           } projectsNav`}
         >
           Projects
+        </div>
+        <div
+          onClick={gotoSkills}
+          className={` ${isSkillsActive ? 'activeNavLink' : 'regularNavLink'}`}
+        >
+          Skills
         </div>
         <div
           onClick={gotoContact}

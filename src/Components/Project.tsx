@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css';
 import gitHubLogo from '../Images/github.png';
@@ -38,6 +38,7 @@ export const Project: React.FC<Props> = ({
       );
     });
   };
+
   const direction = () => {
     if (id % 2 === 0) {
       return 'left';
@@ -62,20 +63,22 @@ export const Project: React.FC<Props> = ({
       );
     }
   };
-
+  const projectAppear = () => {
+    return scrollPosition >= projectsPosition - 500 ? 'appear' : 'dissapear';
+  };
   return (
-    <div className={`individualProject ${direction()}`}>
+    <div className={`individualProject ${direction()} ${projectAppear()}`}>
       <h3
         className={`title
-         ${scrollPosition >= projectsPosition ? 'appear' : 'disappear'}
+         ${projectAppear()}
           `}
       >
         {name}
       </h3>
-      <p className='description'>{description}</p>
-      <div className='techStack'>{displayStack()}</div>
-      <div className='media'>{media()}</div>
-      <div className='links'>
+      <p className={`description ${projectAppear()}`}>{description}</p>
+      <div className={`techStack ${projectAppear()}`}>{displayStack()}</div>
+      <div className={`media ${projectAppear()}`}>{media()}</div>
+      <div className={`links ${projectAppear()}`}>
         <a href={links.gitHub}>
           <img className='gitHubLogo' alt='gitHub' src={gitHubLogo} />
         </a>

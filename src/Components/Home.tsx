@@ -1,4 +1,5 @@
 import React from 'react';
+
 const Home = () => {
   // const [dead, setDead] = useState('alive');
 
@@ -26,9 +27,7 @@ const Home = () => {
       <h2>{name()}</h2>
       <h3>Front-End Web Developer</h3>
       <p>
-        Passionate about learning and sharing knowledge. After 10 years of
-        tutoring in STEM related fields, my mind is now set in impacting the
-        world through coding.
+        After 10 years of tutoring in STEM-related fields,
         {/* <button className='home-aboutBtn'>Get to Know Me Better</button> */}
       </p>
       <div className='socials'>
@@ -57,22 +56,6 @@ const Home = () => {
           </svg>
         </a>
       </div>
-      {/* <div className='home-navigationContainer'>
-        <HashLink smooth to='/portfolio/#projects' className='home-navLink'>
-          Projects
-        </HashLink>
-        <HashLink smooth to='/portfolio/#skills' className='home-navLink'>
-          Skills
-        </HashLink>
-        <HashLink smooth to='/portfolio/#contact' className='home-navLink'>
-          Contact
-        </HashLink>
-      </div> */}
-      {/* <img
-        className='transition-home-bottom '
-        src={bottom}
-        alt='bottom transition'
-      /> */}
     </div>
   );
 };

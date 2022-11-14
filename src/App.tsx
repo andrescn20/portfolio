@@ -7,6 +7,7 @@ import Contact from './Components/Contact';
 import NavBar from './Components/NavBar';
 import Skills from './Components/Skills';
 import { useScrollPosition } from './Components/ScrollHook';
+import top from './Images/skills-top.svg';
 
 const App: React.FC = () => {
   const [skillsPosition, setSkillsPosition] = useState(0);
@@ -37,6 +38,7 @@ const App: React.FC = () => {
           path='/portfolio'
           element={
             <div className='App'>
+              <img className='transition-skills-top' src={top} alt='' />
               <NavBar
                 skills={skillsPosition}
                 projects={projectsPosition}
@@ -47,21 +49,24 @@ const App: React.FC = () => {
                 contactStart={contactStartingPosition}
               />
               <Home />
-              <Skills
-                updatePosition={updateSkillsPosition}
-                skillsStart={setSkillsStartingPosition}
-                skillsPosition={skillsPosition}
-                scrollPosition={scrollPosition}
-              />
               <Projects
                 updatePosition={updateProjectsPosition}
                 projectsStart={setProjectsStartingPosition}
                 scrollPosition={scrollPosition}
                 pojectStartPosition={projectsPosition}
               />
+              <Skills
+                updatePosition={updateSkillsPosition}
+                skillsStart={setSkillsStartingPosition}
+                skillsPosition={skillsPosition}
+                scrollPosition={scrollPosition}
+              />
+
               <Contact
                 updatePosition={updateContactPosition}
                 contactStart={setContactStartingPosition}
+                scrollPosition={scrollPosition}
+                contactPosition={contactPosition}
               />
             </div>
           }

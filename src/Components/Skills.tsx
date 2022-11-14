@@ -1,6 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import scroll from '../Images/scroll.gif';
-import top from '../Images/skills-top.svg';
 
 interface Props {
   skillsStart: (position: number) => void;
@@ -29,7 +27,8 @@ const Skills: React.FC<Props> = ({
 
   return (
     <div id='skills' className='skills' ref={skillsRef}>
-      <img className='transition-skills-top' src={top} alt='' />
+      {/* <img className='transition-skills-top' src={top} alt='' /> */}
+
       <div className='skillsContainer'>
         <h2 className='skillsTitle'>Core Skills</h2>
         <ul className='skillsList'>
@@ -136,11 +135,6 @@ const Skills: React.FC<Props> = ({
             </svg>
           </li>
         </ul>
-        <img
-          src={scroll}
-          alt='Scroll Down'
-          className={scrollPosition >= skillsAppear ? 'disappear' : 'appear'}
-        />
       </div>
       {/* <div className='aboutContainer'>
         <h2 className='aboutTitle'>About</h2>

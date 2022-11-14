@@ -40,7 +40,6 @@ const Projects: React.FC<Props> = ({
   };
   return (
     <div className='projects' id='projects' ref={projectsRef}>
-      {/* <div className='layeredSpacer curvedLayer1'></div> */}
       <h2 className='projects-title'>Projects</h2>
       <div>{displayProjects()}</div>
 
