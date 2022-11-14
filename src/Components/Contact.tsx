@@ -71,7 +71,7 @@ const Contact: React.FC<Props> = ({
           onSubmit={sendEmail}
         >
           <div className={`form-name  ${appear()}`}>
-            <input type='text' name='user_name' placeholder='Andres Castro' />
+            <input type='text' name='sender_name' placeholder='Andres Castro' />
           </div>
           <div className={`form-email  ${appear()}`}>
             <input
