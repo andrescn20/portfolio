@@ -736,7 +736,7 @@ $skillListHeight: 50vh;
           ' links tech ';
         grid-template-columns: 3fr 2fr;
         // .title {
-        //   margin-left: 60%;
+        //   margin-left: 60%;brave
         // }
       }
       .title {
@@ -788,7 +788,7 @@ $skillListHeight: 50vh;
     height: fit-content;
   }
   .contact-form {
-    margin: 0 5vw;
+    margin: 0 10vw;
     border: 2px solid $lightSecondary;
     background-color: $lightPrimary;
     grid-area: form;
@@ -799,7 +799,7 @@ $skillListHeight: 50vh;
     margin-bottom: 2rem;
     justify-content: center;
     border-radius: 10px;
-    width: calc(100% - 2rem - 10vw);
+    width: calc(100% - 2rem - 20vw);
     height: fit-content;
     &:focus {
       border: 2px solid $contrast;
@@ -900,11 +900,9 @@ $skillListHeight: 50vh;
   }
 
   .pseudoFooter {
-    position: absolute;
-    bottom: 0;
     max-height: 6vh;
     margin-top: 4vh;
-    width: 100%;
+    // width: 100%;
     background-color: rgba(0, 0, 0, 0.493);
     border-top: 1px solid $contrast;
     color: $lightPrimary;
@@ -944,27 +942,29 @@ $skillListHeight: 50vh;
 @media (min-width: 800px) {
   .contact {
     .contact-form {
-      width: calc(100% - 2rem - 40vw);
+      // width: calc(100% - 2rem - 50vw);
+      max-width: 400px;
+
       margin: auto;
     }
   }
 }
 
-@media (min-width: 1260px) {
-  .contact {
-    .contact-form {
-      width: calc(100% - 2rem - 60vw);
-      max-width: 500px;
-      margin: auto;
-    }
-  }
-}
+// @media (min-width: 1260px) {
+//   .contact {
+//     .contact-form {
+//       // width: calc(100% - 2rem - 60vw);
+//       max-width: 400px;
+//       margin: auto;
+//     }
+//   }
+// }
 
-@media (min-width: 1920px) {
-  .contact {
-    .contact-form {
-      width: 500px;
-      margin: auto;
-    }
-  }
-}
+// @media (min-width: 1920px) {
+//   .contact {
+//     .contact-form {
+//       max-width: 400px;
+//       margin: auto;
+//     }
+//   }
+// }
