@@ -27,7 +27,9 @@ const Home = () => {
       <h2>{name()}</h2>
       <h3>Front-End Web Developer</h3>
       <p>
-        After 10 years of tutoring in STEM-related fields,
+        Welcome to my portfolio. I studied Mechanical Engineering and acumulated
+        over 10 years of experience as a tutor in STEM-related fields. Now, web
+        development is my new tool for learning and sharing knowledge.
         {/* <button className='home-aboutBtn'>Get to Know Me Better</button> */}
       </p>
       <div className='socials'>

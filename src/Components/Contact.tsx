@@ -71,14 +71,10 @@ const Contact: React.FC<Props> = ({
           onSubmit={sendEmail}
         >
           <div className={`form-name  ${appear()}`}>
-            <input type='text' name='sender_name' placeholder='Andres Castro' />
+            <input type='text' name='sender_name' placeholder='Your Name' />
           </div>
           <div className={`form-email  ${appear()}`}>
-            <input
-              type='email'
-              name='user_email'
-              placeholder='email@email.com'
-            />
+            <input type='email' name='user_email' placeholder='Your Email' />
           </div>
           <div className={`form-message  ${appear()}`}>
             <textarea
@@ -102,7 +98,7 @@ const Contact: React.FC<Props> = ({
           <p className='contact-infoContent'>
             {' '}
             Since I was a young boy, I've been fascinated with the ability of
-            creation we all posses. Being able to understand how our
+            creation we all possess. Being able to understand how our
             surroundings work and manipulating the world with that knowledge
             seemed like magic. Forward to the present and I've now placed all
             that passion into Front End Development. I found a balance I simply
