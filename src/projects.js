@@ -25,11 +25,13 @@ export const projects = [
     },
     image: require('./Videos/CalionCrafting2.gif'),
     id: 1,
+    deployed: true,
+    completed: true,
   },
   {
-    name: 'Newton Project',
+    name: 'Project Newton',
     description:
-      'Educational app meant to teach students how to correctly solve an equation. Directed to aspiring engineering and science students.',
+      'Educational app that teaches how to corretly solve an equation for a given variable. Realtime feedback on executed operations ensures the user is able to understand if the operation was adecuate or not. ',
     techStack: [
       {
         name: 'React',
@@ -48,8 +50,10 @@ export const projects = [
       gitHub: 'https://github.com/Joraarce/Despejes',
       live: 'https://joraarce.github.io/Despejes/',
     },
-    image: 'image',
+    image: require('./Images/projectNewtonSS.png'),
     id: 2,
+    deployed: true,
+    completed: false,
   },
   {
     name: 'NPC Weather',
@@ -75,6 +79,8 @@ export const projects = [
     },
     image: require('./Videos/NPCWeather.gif'),
     id: 3,
+    deployed: true,
+    completed: true,
   },
   // {
   //   name: 'BodyBuilding in depth Planning App',

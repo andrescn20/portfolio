@@ -11,6 +11,8 @@ interface Props {
   image?: any;
   video?: { src: string; type: string };
   id: number;
+  deployed: boolean;
+  completed: boolean;
   key: string;
   projectsPosition: number;
   scrollPosition: number;
@@ -23,6 +25,8 @@ export const Project: React.FC<Props> = ({
   image,
   video,
   id,
+  deployed,
+  completed,
   projectsPosition,
   scrollPosition,
 }) => {
@@ -66,6 +70,20 @@ export const Project: React.FC<Props> = ({
   const projectAppear = () => {
     return scrollPosition >= projectsPosition - 500 ? 'appear' : 'dissapear';
   };
+
+  const displayProgres = () => {
+    if (completed === true) {
+      return <p>{description}</p>;
+    } else {
+      return (
+        <div>
+          <p>{description}</p>
+          <p className='inProgress'>*Work In Progress*</p>
+        </div>
+      );
+    }
+  };
+
   return (
     <div className={`individualProject ${direction()} ${projectAppear()}`}>
       <h3
@@ -75,7 +93,7 @@ export const Project: React.FC<Props> = ({
       >
         {name}
       </h3>
-      <p className={`description ${projectAppear()}`}>{description}</p>
+      <div className={`description ${projectAppear()}`}>{displayProgres()}</div>
       <div className={`techStack ${projectAppear()}`}>{displayStack()}</div>
       <div className={`media ${projectAppear()}`}>{media()}</div>
       <div className={`links ${projectAppear()}`}>

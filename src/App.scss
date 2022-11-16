@@ -15,7 +15,7 @@
     url('./Fonts/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf')
       format('truetype');
 }
-
+//Color Palette: https://coolors.co/e8c547-30323d-4d5061-5c80bc-cdd1c4
 $contrast: #e8c547;
 $dark: #30323d;
 $neutral: #4d5061;
@@ -656,10 +656,17 @@ $skillListHeight: 50vh;
     }
     .description {
       grid-area: description;
+      padding: 0 2rem;
+      text-align: justify;
       &.appear {
         animation-name: enterRight;
         animation-duration: 0.8s;
         animation-timing-function: ease-out;
+      }
+      .inProgress {
+        font-weight: bold;
+        // width: 100%;
+        text-align: center;
       }
     }
     .techStack {
