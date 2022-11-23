@@ -38,7 +38,6 @@ const App: React.FC = () => {
           path='/portfolio'
           element={
             <div className='App'>
-              <img className='transition-skills-top' src={top} alt='' />
               <NavBar
                 skills={skillsPosition}
                 projects={projectsPosition}
