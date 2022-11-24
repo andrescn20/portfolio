@@ -1,7 +1,7 @@
 {
   "name": "andrescn-portfolio",
   "version": "0.1.0",
-  "homepage": "https://andrescn20.github.io/portfolio",
+  "homepage": "https://andrescn.com",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^3.9.0",
