@@ -14,6 +14,7 @@
     "@types/react-dom": "^18.0.8",
     "@types/react-router-hash-link": "^2.4.5",
     "@types/styled-components": "^5.1.26",
+    "node-sass": "^8.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-medium-image-zoom": "^5.1.2",
