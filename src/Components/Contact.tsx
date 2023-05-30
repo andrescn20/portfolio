@@ -15,8 +15,9 @@ const Contact: React.FC<Props> = ({
   contactPosition,
 }) => {
   const contactRef = useRef<any>(null);
-  const [confirmationMessageStatus, setConfirmationMessageStatus] =
-    useState('hidden');
+  const [confirmationMessageStatus, setConfirmationMessageStatus] = useState(
+    'hidden'
+  );
 
   useEffect(() => {
     contactStart(contactRef.current.offsetTop);

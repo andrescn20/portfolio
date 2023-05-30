@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import Zoom from 'react-medium-image-zoom';
-import 'react-medium-image-zoom/dist/styles.css';
 import gitHubLogo from '../Images/github.png';
 
 interface Props {
   name: string;
   description: string;
-  techStack: Array<{ name?: any; link?: any }>;
+  techStack: Array<{ name: string; link: any }>;
   links: { gitHub: string; live: string };
   image?: any;
   video?: { src: string; type: string };
@@ -52,11 +50,7 @@ export const Project: React.FC<Props> = ({
   };
   const media = () => {
     if (image) {
-      return (
-        <Zoom>
-          <img className='image' src={image} alt={`${name} Media`} />
-        </Zoom>
-      );
+      return <img className='image' src={image} alt={`${name} Media`} />;
     }
     if (video) {
       return (
